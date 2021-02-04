@@ -1,1 +1,10 @@
+    1 	public String reverse(String s) {
+    2 	    char[] characters = new char[s.length()];
+    3 	    int j = 0;
+    4 	    for (int i = s.length() - 1; i >= 0; i--) {
+    5 	        characters[j++] = s.charAt(i);
+    6 	    }
+    7 	
+    8 	    return new String(characters);
+    9 	}
 
