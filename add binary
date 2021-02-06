@@ -1,0 +1,24 @@
+    1 	public String addBinary(String a, String b) {
+    2 	    StringBuilder result = new StringBuilder();
+    3 	    int i = a.length() - 1;
+    4 	    int j = b.length() - 1;
+    5 	    int carry = 0;
+    6 	    while (i >= 0 || j >= 0) {
+    7 	        int sum = carry;
+    8 	        if (i >= 0) {
+    9 	            sum += a.charAt(i--) - '0';
+   10 	        }
+   11 	        if (j >= 0) {
+   12 	            sum += b.charAt(j--) - '0';
+   13 	        }
+   14 	
+   15 	        result.append(sum % 2);
+   16 	        carry = sum / 2;
+   17 	    }
+   18 	
+   19 	    if (carry != 0) {
+   20 	        result.append(1);
+   21 	    }
+   22 	
+   23 	    return result.reverse().toString();
+   24 	}
