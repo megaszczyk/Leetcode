@@ -1,0 +1,20 @@
+    1 	public boolean isAnagram(String s, String t) {
+    2 	    if(s.length() != t.length()) {
+    3 	        return false;
+    4 	    }
+    5 	
+    6 	    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+    7 	    for(char c: s.toCharArray()) {
+    8 	        map.put(c, map.getOrDefault(c, 0) + 1);
+    9 	    }
+   10 	
+   11 	    for(char c: t.toCharArray()) {
+   12 	        if(!map.containsKey(c) || map.get(c) <= 0) {
+   13 	            return false;
+   14 	        } else {
+   15 	            map.put(c, map.get(c) - 1);
+   16 	        }
+   17 	    }
+   18 	
+   19 	    return true;
+   20 	}
